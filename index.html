@@ -73,9 +73,32 @@
                         </div>
                         <div>
                             <ul class="flex md:flex-row flex-row md:items-center md:gap-[4vw] lg:mt-0 md:mt-0 gap-5 -ml-20 lg:ml-0">
-                                <li>
-                                    <a class="text-[#121212CC] text-lg font-semibold" href="#!">Login</a>
-                                </li>
+                                <div x-data="{ open: false }">
+                                    <button @click="open = !open">
+                                        <li>
+                                            <a class="text-[#121212CC] text-lg font-semibold" href="#!">Login</a>
+                                        </li>
+                                    </button>
+                                
+                                    <div x-show="open" @click.away="open = false" class="mt-2">
+                                      <!-- Dropdown content -->
+                                      <div class="bg-white border rounded shadow-md absolute mt-2 lg:-ml-28 -ml-56 p-10 z-10">
+                                        <h1 class="text-left font-semibold">Welcome back our wonderful cutomer!</h1>
+                                        <h1 class="text-left mt-2 font-semibold">Login into your account</h1>
+                                        <div class="mt-3 justify-start">
+                                            <label for="text">
+                                                <input type="text" placeholder="Email" class="p-2 border-2 border-[#000000]">
+                                            </label><br><br>
+                                            <label for="password">
+                                                <input type="passwor" placeholder="Password" class="p-2 border-2 border-[#000000]">
+                                            </label>
+                                            <div class="mt-5">
+                                                <a href="#!" class="bg-[#000000] text-[#ffffff] p-2 rounded-md">Login</a>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
                                 <div x-data="{ open: false }">
                                     <button @click="open = !open">
                                         <li>
@@ -85,9 +108,9 @@
                                 
                                     <div x-show="open" @click.away="open = false" class="mt-2">
                                       <!-- Dropdown content -->
-                                      <div class="bg-white border rounded shadow-md absolute mt-2 lg:-ml-28 -ml-56 p-10">
-                                        <h1 class="text-center font-semibold">Search For Your Favourite Dress</h1>
-                                        <div class="mt-3 flex items-center justify-center">
+                                      <div class="bg-white border rounded shadow-md absolute mt-2 lg:-ml-28 -ml-56 p-10 z-10">
+                                        <h1 class="text-left font-semibold">Search For Your Favourite Dress</h1>
+                                        <div class="mt-3 flex items-center justify-start">
                                             <label for="search">
                                                 <input type="search" placeholder="Search" class="p-2 border-2 border-[#000000]">
                                             </label>
@@ -108,7 +131,7 @@
                                 
                                     <div x-show="open" @click.away="open = false" class="mt-2">
                                       <!-- Dropdown content -->
-                                      <div class="bg-white border rounded shadow-md absolute mt-2 lg:-ml-28 -ml-56 p-10">
+                                      <div class="bg-white border rounded shadow-md absolute mt-2 lg:-ml-28 -ml-56 p-10 z-10">
                                         <h1 class="text-center font-semibold">Your Cart is Empty!</h1>
                                         <div class="mt-3 flex items-center justify-center">
                                             <a href="#!" class="bg-[#000000] text-[#ffffff] p-2 rounded-md">Add to Cart</a>
